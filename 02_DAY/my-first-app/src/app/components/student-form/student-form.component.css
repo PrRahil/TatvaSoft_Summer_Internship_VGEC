@@ -1,0 +1,28 @@
+.valid-name, .valid-field {
+  color: green;
+}
+
+.invalid-name, .invalid-field {
+  color: red;
+}
+
+.success-message {
+  color: green;
+  margin-top: 10px;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-right: 5px;
+}
+
+.reset-btn {
+  background-color: #f44336;
+}
+
+.students-list {
+  margin-top: 15px;
+}

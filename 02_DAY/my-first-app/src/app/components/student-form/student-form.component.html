@@ -1,0 +1,60 @@
+<div>
+  <h2>Student Info Form</h2>
+
+  <!--Interpolation-->
+  <p>Welcome, {{studentName || 'Student'}}!</p>
+
+  <!--Student Name-->
+  <div class="form-field">
+    <label for="studentName">Student Name:</label>
+    <input id="studentName" [(ngModel)]="studentName" placeholder="Enter Student Name" 
+      [ngStyle]="{borderColor: studentName.length > 3 ? 'green' : 'red'}">
+    <p [ngClass]="{'valid-name': studentName.length > 3, 'invalid-name': studentName.length <= 3}">
+      Name must be more than 3 characters.
+    </p>
+  </div>
+
+  <!--Enrollment Number-->
+  <div class="form-field">
+    <label for="enrollmentNumber">Enrollment Number:</label>
+    <input id="enrollmentNumber" [(ngModel)]="enrollmentNumber" placeholder="Enter Enrollment Number" 
+      [ngStyle]="{borderColor: isValidEnrollment ? 'green' : 'red'}" (blur)="validateEnrollment()">
+    <p [ngClass]="{'valid-field': isValidEnrollment, 'invalid-field': !isValidEnrollment}">
+      Enrollment number must be at least 5 characters.
+    </p>
+  </div>
+
+  <!--Email-->
+  <div class="form-field">
+    <label for="email">Email ID:</label>
+    <input id="email" [(ngModel)]="email" placeholder="Enter Email ID" type="email"
+      [ngStyle]="{borderColor: isValidEmail ? 'green' : 'red'}" (blur)="validateEmail()">
+    <p [ngClass]="{'valid-field': isValidEmail, 'invalid-field': !isValidEmail}">
+      Please enter a valid email address.
+    </p>
+  </div>
+
+  <!--Mobile Number-->
+  <div class="form-field">
+    <label for="mobileNumber">Mobile Number:</label>
+    <input id="mobileNumber" [(ngModel)]="mobileNumber" placeholder="Enter 10-digit Mobile Number" 
+      [ngStyle]="{borderColor: isValidMobile ? 'green' : 'red'}" (blur)="validateMobile()">
+    <p [ngClass]="{'valid-field': isValidMobile, 'invalid-field': !isValidMobile}">
+      Please enter a valid 10-digit mobile number.
+    </p>
+  </div>
+
+  <button (click)="submitForm()" [disabled]="!studentName || !enrollmentNumber || !email || !mobileNumber">Submit</button>
+  <button (click)="resetForm()">Reset</button>
+
+  <!--Structural Directive: *ngIf-->
+  <p *ngIf="submitted" class="success-message">Student submitted successfully!</p>
+
+  <!--Structural Directive: *ngFor-->
+  <div *ngIf="students.length > 0">
+    <h3>Submitted Students:</h3>
+    <ul>
+      <li *ngFor="let student of students">{{student}}</li>
+    </ul>
+  </div>
+</div>
