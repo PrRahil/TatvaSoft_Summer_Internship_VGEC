@@ -1,0 +1,48 @@
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+.vs/
+*.user
+*.suo
+
+# Ignore build output directories
+bin/
+obj/
+
+# Ignore build output in all subfolders
+**/bin/
+**/obj/
+
+# Ignore migrations build artifacts
+**/Migrations/
+
+# Ignore publish output
+**/publish/
+**/out/
+
+# Ignore ASP.NET generated files
+wwwroot/
+
+# Ignore appsettings secrets (but keep templates)
+**/appsettings.Development.json
+**/appsettings.Production.json
+**/appsettings.Staging.json
+
+# Ignore Rider project files
+.idea/
+
+# Ignore logs
+*.log
+
+# Ignore test results
+TestResults/
+
+# Ignore npm packages (if any front-end)
+node_modules/
+
+# Ignore Mac and Linux system files
+.DS_Store
+Thumbs.db
+
+# Ignore any other user-specific files
+*.vspscc
+*.vssscc
