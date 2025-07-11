@@ -12,6 +12,12 @@ namespace Mission.Entities.Context
 
         public DbSet<MissionSkill> MissionSkills { get; set; }
 
+        public DbSet<Mission.Entities.Entities.MissionDetail> MissionDetails { get; set; }
+
+        public DbSet<Country> Countries { get; set; }
+
+        public DbSet<City> Cities { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);

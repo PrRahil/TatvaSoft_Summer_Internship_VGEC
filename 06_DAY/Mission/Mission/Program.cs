@@ -46,6 +46,14 @@ builder.Services.AddScoped<IMissionThemeService, MissionThemeService>();
 builder.Services.AddScoped<IMissionSkillRepository, MissionSkillRepository>();
 builder.Services.AddScoped<IMissionSkillService, MissionSkillService>();
 
+builder.Services.AddScoped<IMissionRepository, MissionRepository>();
+builder.Services.AddScoped<IMissionService, MissionService>();
+
+builder.Services.AddScoped<ICountryRepository, CountryRepository>();
+builder.Services.AddScoped<ICountryService, CountryService>();
+builder.Services.AddScoped<ICityRepository, CityRepository>();
+builder.Services.AddScoped<ICityService, CityService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

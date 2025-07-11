@@ -65,7 +65,7 @@ export const API_ENDPOINTS = {
     VOLUNTEERING_MISSION_LIST: "/VolunteeringTimesheet/VolunteeringMissionList",
   },
   AdminUser:{
-    USER_LIST: "/AdminUser/UserDetailList",
+    USER_LIST: "/User/UserDetailList",
     DELETE_USER: "/AdminUser/DeleteUser",
   },
   MISSION_THEME: {
